@@ -1,3 +1,7 @@
+
+import dotenv from "dotenv";
+dotenv.config(); // Charge le fichier .env situé dans le dossier courant
+// ... la suite de votre code de migration
 import sequelize from "@/lib/db/sequelize";
 import "@/models"
 import "@/models/Garage";
