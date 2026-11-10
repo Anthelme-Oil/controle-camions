@@ -62,9 +62,9 @@ jobs:
           echo "=== Fichiers déployés avec succès ==="
 
       # ============================================================
-      # 4. Installation production + Migration DB + Redémarrage PM2
+      # 4. Installation production + redémarrage PM2
       # ============================================================
-      - name: Dépendances, Migration saferoute et Redémarrage PM2
+      - name: Installation et redémarrage de l'application
         run: |
           set -e
 
@@ -76,13 +76,10 @@ jobs:
           echo "=== Installation des dépendances production ==="
           npm install
 
-          echo "=== Exécution des migrations Sequelize (saferoute) ==="
-          npx tsx scripts/migrate.ts
-
           echo "=== Redémarrage PM2 ==="
           pm2 restart controle-camions || pm2 start npm --name "controle-camions" -- start
 
           echo "=== Sauvegarde PM2 ==="
           pm2 save
 
-          echo "=== Déploiement et mise à jour terminés avec succès ==="
+          echo "=== Déploiement terminé avec succès ==="
