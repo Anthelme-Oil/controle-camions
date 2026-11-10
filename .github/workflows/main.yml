@@ -11,9 +11,15 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      # ============================================================
+      # 1. Récupération du code
+      # ============================================================
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ============================================================
+      # 2. Vérification + installation + build
+      # ============================================================
       - name: Build et vérification
         run: |
           set -e
@@ -34,14 +40,16 @@ jobs:
 
           echo "=== Build terminé avec succès ==="
 
+      # ============================================================
+      # 3. Déploiement vers /var/www/controle-camions
+      # ============================================================
       - name: Déployer vers /var/www/controle-camions
         run: |
           set -e
 
           echo "=== Préparation du dossier de production ==="
 
-          sudo mkdir -p /var/www/controle-camions
-          sudo chown -R $USER:$USER /var/www/controle-camions
+          mkdir -p /var/www/controle-camions
 
           rsync -av \
             --delete \
@@ -53,6 +61,9 @@ jobs:
 
           echo "=== Fichiers déployés avec succès ==="
 
+      # ============================================================
+      # 4. Installation production + redémarrage
+      # ============================================================
       - name: Installation et redémarrage de l'application
         run: |
           set -e
@@ -63,7 +74,7 @@ jobs:
           cd /var/www/controle-camions
 
           echo "=== Installation des dépendances production ==="
-          npm install --production=false
+          npm install
 
           echo "=== Redémarrage PM2 ==="
           pm2 restart controle-camions || pm2 start npm --name "controle-camions" -- start
