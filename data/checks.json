@@ -1,0 +1,95 @@
+{
+    "document": "RTGEP Vehicle standards Checklist",
+    "reference": "SY51 RTGEP / CHECKLIST DES STANDARDS OBLIGATOIRES",
+    "categories": [{
+            "title": "Tous les véhicules",
+            "items": [
+                { "id": "3.6.1.1", "reference": "3.6.1.1", "text": "Être visuellement bien maintenu et capable de se conformer aux exigences d'une inspection sécurité basique compatible avec une manœuvre à faible vitesse dans les limites de l'aire de chargement ou de livraison. Inclure dans l'inspection l'opération de freinage et l'inspection des roues (les pneus devant avoir un dessin du pas visible et aucun dommage évident)." },
+                { "id": "3.6.1.2", "reference": "3.6.1.2", "text": "Ceintures de sécurité à trois points de fixation pour le chauffeur et les passagers." },
+                { "id": "3.6.1.3", "reference": "3.6.1.3", "text": "Être équipé d'un système coupe-moteur." },
+                { "id": "3.6.1.4", "reference": "3.6.1.4", "text": "Être équipé d'une alarme sonore de marche arrière." }
+            ]
+        },
+        {
+            "title": "Tous les véhicules opérant en Zone 1",
+            "items": [
+                { "id": "3.6.1.5", "reference": "3.6.1.5", "text": "Avoir des installations électriques anti-vapeur." },
+                { "id": "3.6.1.6", "reference": "3.6.1.6", "text": "Être équipé de coupe-batterie extérieur à la cabine." },
+                { "id": "3.6.1.7", "reference": "3.6.1.7", "text": "Bornes de mises à la terre compatibles avec les installations de la rampe de chargement." }
+            ]
+        },
+        {
+            "title": "Tous les tankers",
+            "items": [
+                { "id": "3.6.1.8", "reference": "3.6.1.8", "text": "Tous les tankers." },
+                { "id": "3.6.1.9", "reference": "3.6.1.9", "text": "Avoir dans les compartiments les clapets de fond pour éviter les fuites de produit lorsqu'une vanne extérieure est endommagée." },
+                { "id": "3.6.1.10", "reference": "3.6.1.10", "text": "Avoir un système d'échappement bien à l'abri d'un contact direct avec le produit résultant d'un trop-plein et des fuites." },
+                { "id": "3.6.1.11", "reference": "3.6.1.11", "text": "Système de protection contre le trop-plein compatible avec les installations de la rampe de chargement." }
+            ]
+        },
+        {
+            "title": "Pneus",
+            "items": [
+                { "id": "3.6.1.12", "reference": "3.6.1.12", "text": "Les pneus doivent être fabriqués par des sociétés reconnues sur le plan international comme Michelin, Goodyear, Dunlop, Bridgestone, Sumitomo, Hankook, Firestone, Continental ou similaire. L'utilisation de pneus d'autres fabricants doit faire l'objet des procédures de dérogation." },
+                { "id": "3.6.1.13", "reference": "3.6.1.13", "text": "Les pneus rechapés et retracés ne sont permis que lorsqu'ils sont exécutés par un agent approuvé par fabricant international de pneu en accord avec les recommandations du fabricant d'origine. Les pneus rechapés et retracés ne sont pas autorisés sur les essieux moteurs." },
+                { "id": "3.6.1.14", "reference": "3.6.1.14", "text": "Le véhicule opère avec des pneus ayant une profondeur minimum du pas de 2 mm couvrant toute la largeur et tout autour de la circonférence du pneu." },
+                { "id": "3.6.1.15", "reference": "3.6.1.15", "text": "Les pneus doivent être compatibles avec la charge sur les essieux et correctement gonflés selon les recommandations des fabricants." },
+                { "id": "3.6.1.16", "reference": "3.6.1.16", "text": "Les témoins de serrage sont fixés et bien indiqués." },
+                { "id": "3.6.1.17", "reference": "3.6.1.17", "text": "Un pneu doit être remplacé si : a) il a une coupe ou déchirure dans sa structure de plus de 25 mm ou 10 % de la largeur de section du pneu, lequel est le plus grand, assez profond pour atteindre le pli ; b) s'il a une masse complémentaire, déchirure ou une bosse causée par séparation ou fracture partielle de sa structure ; c) si une portion du pli se trouve exposée." },
+                { "id": "3.6.1.18", "reference": "3.6.1.18", "text": "Les pneus à pli croisés ne doivent être mélangés aux pneus radial sur le même essieu." },
+                { "id": "3.6.1.19", "reference": "3.6.1.19", "text": "Si des pneus à chambre à air sont utilisés, les chambres à air doivent être de dimension appropriée et ne doivent pas être rapiécées." },
+                { "id": "3.6.1.20", "reference": "3.6.1.20", "text": "Les pneus réparés par vulcanisation ne sont pas autorisés." }
+            ]
+        },
+        {
+            "title": "Les freins",
+            "items": [
+                { "id": "3.6.1.21", "reference": "3.6.1.21", "text": "Un système de freinage composé de frein de service, frein secondaire et frein à main doit être placé et capable d'arrêter un véhicule de façon sûre rapidement sur une surface pavée à une décélération moyenne minimale de 0.3 g par seconde par seconde (ou minimum spécifié par la loi, lequel est plus grand)." },
+                { "id": "3.6.1.22", "reference": "3.6.1.22", "text": "Les freins à garniture d'amiante ne sont pas autorisés." },
+                { "id": "3.6.1.23", "reference": "3.6.1.23", "text": "Tout véhicule (tracteur, rigide, remorque) nouvellement enregistré après le 31/12/2003 doit être équipé d'un système ABS." }
+            ]
+        },
+        {
+            "title": "Rétroviseurs",
+            "items": [
+                { "id": "3.6.1.24", "reference": "3.6.1.24", "text": "Des rétroviseurs à angle ouvert donnant une vision complète sur chaque côté du véhicule." },
+                { "id": "3.6.1.25", "reference": "3.6.1.25", "text": "Rétroviseurs placés pour assurer une vision des points noirs autour du véhicule." }
+            ]
+        },
+        {
+            "title": "Autres équipements de sécurité · Tous les véhicules",
+            "items": [
+                { "id": "3.6.1.26", "reference": "3.6.1.26", "text": "Pare-brises laminés." },
+                { "id": "3.6.1.27", "reference": "3.6.1.27", "text": "Téléphone cellulaire mains libres ou équipement radio." },
+                { "id": "3.6.1.28", "reference": "3.6.1.28", "text": "Bavettes sur les garde-boues (sauf si non nécessaires vu les conditions climatiques)." },
+                { "id": "3.6.1.29", "reference": "3.6.1.29", "text": "Les barres anti-encastrement latérales et arrière solides (comme dans le DOP). La distance du sol aux barres ne doit normalement pas dépasser 500 mm. Cependant, la distance précise dépendra des routes locales et conditions d'opération." },
+                { "id": "3.6.1.30", "reference": "3.6.1.30", "text": "OBC placé sur chaque véhicule." },
+                { "id": "3.6.1.31", "reference": "3.6.1.31", "text": "Sur les nouveaux véhicules achetés après le 31/12/2003 ayant un poids total supérieur à 7,5 tonnes, placer un limiteur de vitesse du moteur calibré pour s'assurer qu'une vitesse de 70 kph, ou la limite de vitesse nationale si plus stricte, ne peut être excédée." },
+                { "id": "3.6.1.32", "reference": "3.6.1.32", "text": "Trousse de premier secours dans la cabine de chaque véhicule." },
+                { "id": "3.6.1.33", "reference": "3.6.1.33", "text": "Avoir les numéros d'urgence affichés sur le véhicule." },
+                { "id": "3.6.1.34", "reference": "3.6.1.34", "text": "Être équipé de bandes réfléchissantes sur la citerne." },
+                { "id": "3.6.1.35", "reference": "3.6.1.35", "text": "Trois triangles de signalisation." }
+            ]
+        },
+        {
+            "title": "Camions citernes seulement",
+            "items": [
+                { "id": "3.6.1.36", "reference": "3.6.1.36", "text": "Citerne équipée d'une protection anti-renversement qui donne une protection effective aux trous d'homme en cas de renversement du véhicule (respecte les standards ADR)." },
+                { "id": "3.6.1.37", "reference": "3.6.1.37", "text": "Rambarde de sécurité au-dessus du camion ou système de harnais pour éviter une chute du chauffeur lorsqu'il travaille au-dessus." },
+                { "id": "3.6.1.38", "reference": "3.6.1.38", "text": "Dans le cas de camions de produits vrac, un kit d'épandage capable de nettoyer le produit, inférieur à 10 litres." },
+                { "id": "3.6.1.39", "reference": "3.6.1.39", "text": "Les camions citernes doivent être équipés d'au moins trois extincteurs AFFF ou à poudre, deux accessibles à chaque côté de la citerne et le troisième dans la cabine du chauffeur (dimension 9 kg pour les extincteurs extérieurs et 2 kg pour l'extincteur de cabine)." }
+            ]
+        },
+        {
+            "title": "Minimum lighting requirements",
+            "items": [
+                { "id": "3.6.1.40", "reference": "3.6.1.40", "text": "Phares à haute intensité." },
+                { "id": "3.6.1.41", "reference": "3.6.1.41", "text": "Feux de brouillard avant et arrière." },
+                { "id": "3.6.1.42", "reference": "3.6.1.42", "text": "Feux de détresse." },
+                { "id": "3.6.1.43", "reference": "3.6.1.43", "text": "Feux stop." },
+                { "id": "3.6.1.44", "reference": "3.6.1.44", "text": "Feux latéraux sur la citerne." },
+                { "id": "3.6.1.45", "reference": "3.6.1.45", "text": "Gyrophare." }
+            ]
+        }
+    ]
+}
