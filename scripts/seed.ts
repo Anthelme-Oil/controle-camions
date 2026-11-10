@@ -12,13 +12,13 @@ async function seed() {
 
     // Synchronisation explicite de tous les modèles
     await sequelize.sync({ alter: true });
-    console.log(" Tables (users, inspections, inspection_checks, email_logs) synchronisées !");
+    console.log("✅ Tables (users, inspections, inspection_checks, email_logs) synchronisées !");
 
-    // Hachage du mot de passe
+    // Hachage des mots de passe
     const hashedPassword1 = await bcrypt.hash("AV_pass@#2026", 10);
     const hashedPassword2 = await bcrypt.hash("password123", 10);
 
-    // Utilisateurs par défaut
+    // Utilisateurs par défaut avec leurs mots de passe hachés respectifs
     const defaultUsers = [
       {
         email: "anthelme.kpodar@togosh.com",
@@ -35,19 +35,15 @@ async function seed() {
     ];
 
     for (const userData of defaultUsers) {
-      const [user, created] = await User.findOrCreate({
-        where: { email: userData.email },
-        defaults: userData,
+      // Utilisation de upsert pour forcer la mise à jour si l'utilisateur existe déjà
+      const [user, created] = await User.upsert(userData, {
+        returning: true,
       });
 
-      if (created) {
-        console.log(`✅ Utilisateur créé : ${user.email} (${user.role})`);
-      } else {
-        console.log(`ℹ️ L'utilisateur ${user.email} existe déjà.`);
-      }
+      console.log(`✅ Utilisateur synchronisé avec succès : ${userData.email} (${userData.role})`);
     }
 
-    console.log("\n🎉 Seeding terminé avec succès !");
+    console.log("\n🎉 Seeding et mise à jour des mots de passe terminés avec succès !");
     process.exit(0);
   } catch (error) {
     console.error("❌ Erreur lors de la synchronisation/seeding :", error);

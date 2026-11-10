@@ -6,7 +6,15 @@ export async function GET() {
     const garages = await GarageService.getAllGarages();
     return NextResponse.json(garages);
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error("❌ Erreur API GET /api/garages :", error);
+    return NextResponse.json(
+      { 
+        error: "Erreur lors de la récupération des garages", 
+        message: error.message, 
+        stack: error.stack 
+      },
+      { status: 500 }
+    );
   }
 }
 
@@ -16,6 +24,13 @@ export async function POST(request: Request) {
     const garage = await GarageService.createGarage(body);
     return NextResponse.json(garage, { status: 201 });
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error("❌ Erreur API POST /api/garages :", error);
+    return NextResponse.json(
+      { 
+        error: error.message, 
+        stack: error.stack 
+      }, 
+      { status: 500 }
+    );
   }
 }

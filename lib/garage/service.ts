@@ -7,6 +7,8 @@ export const GarageService = {
     return GarageRepository.findAll();
   },
 
+  
+
   async createGarage(data: { name?: string; location?: string; emails: string[] }) {
     return GarageRepository.create(data);
   },

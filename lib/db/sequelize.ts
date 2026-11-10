@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config(); // Charge le fichier .env situé dans le dossier courant
+// ... la suite de votre code de migration
 import { Sequelize } from "sequelize";
 import mysql2 from "mysql2"; // Force le bundling de mysql2
 
