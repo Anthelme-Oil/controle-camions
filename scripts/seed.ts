@@ -15,22 +15,23 @@ async function seed() {
     console.log(" Tables (users, inspections, inspection_checks, email_logs) synchronisées !");
 
     // Hachage du mot de passe
-    const hashedPassword = await bcrypt.hash("password123", 10);
+    const hashedPassword1 = await bcrypt.hash("AV_pass@#2026", 10);
+    const hashedPassword2 = await bcrypt.hash("password123", 10);
 
     // Utilisateurs par défaut
     const defaultUsers = [
       {
-        email: "admin@saferoute.com",
-        name: "Marcel Kouassi",
-        password: hashedPassword,
+        email: "anthelme.kpodar@togosh.com",
+        name: "Anthelme Kpodar",
+        password: hashedPassword2,
         role: "ADMIN" as const,
       },
-      // {
-      //   email: "inspecteur@saferoute.com",
-      //   name: "Jean Dupont",
-      //   password: hashedPassword,
-      //   role: "INSPECTOR" as const,
-      // },
+      {
+        email: "yawovi.avowlanou@togosh.com",
+        name: "Yawovi Avowlanou",
+        password: hashedPassword1,
+        role: "ADMIN" as const,
+      },
     ];
 
     for (const userData of defaultUsers) {
