@@ -16,13 +16,13 @@ const sequelize =
   globalForSequelize.sequelize ||
   new Sequelize(
     process.env.DB_NAME || "saferoute",
-    process.env.DB_USER || "root",
-    process.env.DB_PASSWORD || "",
+    process.env.DB_USER || (() => { throw new Error("DB_USER non défini dans l'environnement"); })(),
+    process.env.DB_PASSWORD ?? "",
     {
       host: process.env.DB_HOST || "localhost",
       port: Number(process.env.DB_PORT || 3306),
       dialect: "mysql",
-      dialectModule: mysql2, // Injection directe du pilote MySQL
+      dialectModule: mysql2,
       logging: false,
       pool: {
         max: 10,

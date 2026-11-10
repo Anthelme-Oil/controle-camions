@@ -12,7 +12,7 @@ async function seed() {
 
     // Synchronisation explicite de tous les modèles
     await sequelize.sync({ alter: true });
-    console.log("✅ Tables (users, inspections, inspection_checks, email_logs) synchronisées !");
+    console.log(" Tables (users, inspections, inspection_checks, email_logs) synchronisées !");
 
     // Hachage du mot de passe
     const hashedPassword = await bcrypt.hash("password123", 10);
