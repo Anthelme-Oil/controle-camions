@@ -1,4 +1,3 @@
-// lib/db/sequelize.ts
 import { Sequelize } from "sequelize";
 import mysql2 from "mysql2"; // Force le bundling de mysql2
 
@@ -12,17 +11,22 @@ try {
 
 const globalForSequelize = globalThis as unknown as { sequelize: Sequelize };
 
+// Pendant le build Next.js, on évite de bloquer si les variables ne sont pas encore injectées
+const dbUser = process.env.DB_USER || (process.env.NODE_ENV === "production" ? "toiladmin" : "root");
+const dbPassword = process.env.DB_PASSWORD ?? "T@gosh2026";
+const dbName = process.env.DB_NAME || "saferoute";
+
 const sequelize =
   globalForSequelize.sequelize ||
   new Sequelize(
-    process.env.DB_NAME || "saferoute",
-    process.env.DB_USER || (() => { throw new Error("DB_USER non défini dans l'environnement"); })(),
-    process.env.DB_PASSWORD ?? "",
+    dbName,
+    dbUser,
+    dbPassword,
     {
       host: process.env.DB_HOST || "localhost",
       port: Number(process.env.DB_PORT || 3306),
       dialect: "mysql",
-      dialectModule: mysql2,
+      dialectModule: mysql2, // Injection directe du pilote MySQL
       logging: false,
       pool: {
         max: 10,
