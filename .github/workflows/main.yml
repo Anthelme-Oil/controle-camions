@@ -41,7 +41,7 @@ jobs:
           echo "=== Build terminé avec succès ==="
 
       # ============================================================
-      # 3. Déploiement vers /var/www/controle-camions
+      # 3. Déploiement (sans sudo pour éviter le blocage du runner)
       # ============================================================
       - name: Déployer vers /var/www/controle-camions
         run: |
