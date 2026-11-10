@@ -12,8 +12,9 @@ try {
 const globalForSequelize = globalThis as unknown as { sequelize: Sequelize };
 
 // Pendant le build Next.js, on évite de bloquer si les variables ne sont pas encore injectées
-const dbUser = process.env.DB_USER || (process.env.NODE_ENV === "production" ? "toiladmin" : "root");
-const dbPassword = process.env.DB_PASSWORD ?? "T@gosh2026";
+// Forcer directement 'toiladmin' par défaut, plus de piège avec NODE_ENV
+const dbUser = process.env.DB_USER || "toiladmin";
+const dbPassword = process.env.DB_PASSWORD || "T@gosh2026";
 const dbName = process.env.DB_NAME || "saferoute";
 
 const sequelize =
