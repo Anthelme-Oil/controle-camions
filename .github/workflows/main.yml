@@ -1,0 +1,74 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Local Ubuntu
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build et vérification
+        run: |
+          set -e
+
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+          echo "=== Vérification de l'environnement ==="
+          node -v
+          npm -v
+          pm2 -v
+
+          echo "=== Installation des dépendances ==="
+          npm install
+
+          echo "=== Build Next.js ==="
+          npm run build
+
+          echo "=== Build terminé avec succès ==="
+
+      - name: Déployer vers /var/www/controle-camions
+        run: |
+          set -e
+
+          echo "=== Préparation du dossier de production ==="
+
+          sudo mkdir -p /var/www/controle-camions
+          sudo chown -R $USER:$USER /var/www/controle-camions
+
+          rsync -av \
+            --delete \
+            --exclude='.git' \
+            --exclude='.env' \
+            --exclude='.env.local' \
+            --exclude='node_modules' \
+            . /var/www/controle-camions/
+
+          echo "=== Fichiers déployés avec succès ==="
+
+      - name: Installation et redémarrage de l'application
+        run: |
+          set -e
+
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+          cd /var/www/controle-camions
+
+          echo "=== Installation des dépendances production ==="
+          npm install --production=false
+
+          echo "=== Redémarrage PM2 ==="
+          pm2 restart controle-camions || pm2 start npm --name "controle-camions" -- start
+
+          echo "=== Sauvegarde PM2 ==="
+          pm2 save
+
+          echo "=== Déploiement terminé avec succès ==="
