@@ -16,7 +16,6 @@ node_modules
 .env
 et
 
-/node_modules
 /.next/
 /out/
 .env
